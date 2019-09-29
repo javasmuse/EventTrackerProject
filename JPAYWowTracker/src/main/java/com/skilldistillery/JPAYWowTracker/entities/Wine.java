@@ -29,9 +29,8 @@ public class Wine {
 	public Wine() {
 		super();
 	}
-
 	
-
+	
 	public Wine(String name, String country, String region, String grape, double price, String locationPurchased,
 			int rating, String notes, int year, String image, String winery) {
 		super();
@@ -47,7 +46,6 @@ public class Wine {
 		this.image = image;
 		this.winery = winery;
 	}
-
 
 
 	public int getId() {
