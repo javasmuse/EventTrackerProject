@@ -21,7 +21,7 @@ USE `YWow` ;
 DROP TABLE IF EXISTS `wine` ;
 
 CREATE TABLE IF NOT EXISTS `wine` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `country` VARCHAR(45) NOT NULL,
   `region` VARCHAR(45) NULL,

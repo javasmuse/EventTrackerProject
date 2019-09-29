@@ -29,6 +29,11 @@ public class YWowController {
 	public String ping() {
 		return "pong";
 	}
+	@PostMapping("wine")
+	public Wine addWine(@RequestBody Wine wine) {
+		wine = svc.createNew(wine);
+		return wine;
+	}
 
 	@GetMapping("wine")
 	public List<Wine> listAllWines() {
@@ -42,7 +47,9 @@ public class YWowController {
 	}
 
 	@DeleteMapping("wine/{wid}")
-	public void destroyWine(@PathVariable("wid") int postId, HttpServletResponse resp) {
+	public void destroyWine(@PathVariable("wid") int id, HttpServletResponse resp) {
+		svc.deleteById(id);
+		
 	}
 
 	@PutMapping("wine/{wid}")
@@ -62,27 +69,4 @@ public class YWowController {
 		return wine;
 	}
 
-	@PostMapping("wine")
-	public Wine addWine(@RequestBody Wine wine) {
-		wine = svc.createNew(wine);
-		return wine;
-	}
 }
-
-//	@PostMapping("wine")
-//	public Wine addWine(@RequestBody Wine wine, HttpServletResponse resp, HttpServletRequest req) {
-//		try { 
-//			svc.createNew(wine); 
-//			resp.setStatus(201);
-//			StringBuffer url = req.getRequestURL();
-//			System.err.println(url);
-//			url.append("/");
-//			url.append(wine.getId());
-//			resp.setHeader("Location", url.toString());
-//		} catch (Exception e) {
-//			resp.setStatus(400);
-//			e.printStackTrace();
-//		}
-//		return wine;
-//		}
-//	}

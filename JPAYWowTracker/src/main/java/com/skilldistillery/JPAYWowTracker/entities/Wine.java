@@ -29,8 +29,7 @@ public class Wine {
 	public Wine() {
 		super();
 	}
-	
-	
+
 	public Wine(String name, String country, String region, String grape, double price, String locationPurchased,
 			int rating, String notes, int year, String image, String winery) {
 		super();
@@ -167,6 +166,12 @@ public class Wine {
 	}
 
 	
+	@Override
+	public String toString() {
+		return "Wine [id=" + id + ", name=" + name + ", country=" + country + ", region=" + region + ", grape=" + grape
+				+ ", price=" + price + ", locationPurchased=" + locationPurchased + ", rating=" + rating + ", notes="
+				+ notes + ", year=" + year + ", image=" + image + ", winery=" + winery + "]";
+	}
 
 
 }
