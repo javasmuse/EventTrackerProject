@@ -12,7 +12,7 @@ updating a wine by ID
 adding a wine to the collection
 
 ## Technologies Used
-mySQL, mySQL, Workbench, GitHub, Java, SpringBoot, JPA, Postman, Rest, Spring JPA Data
+mySQL, mySQL, Workbench, GitHub, Java, SpringBoot, JPA, Postman, Rest, Spring JPA Data, Slack, Atom, bash 
 
 ## Lessons Learned
 Attention to detail is critical and 90% of the work.
@@ -26,4 +26,4 @@ Add extra search features and two extra tables, to create a more useful and real
 
 ## Notes for next Phase of this product
 In the front end, incorporate the further goals and enable the photo save feature.
-Ultimately, allow integration / linking to social media and other wine information, perhaps links to wineries and good wine shops. 
+Ultimately, allow integration / linking to social media and other wine information, perhaps links to wineries and good wine shops.
