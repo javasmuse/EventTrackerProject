@@ -11,8 +11,10 @@ viewing the entire collection
 updating a wine by ID
 adding a wine to the collection
 
+The fields for this single wine table are: an auto generated id, name, country, region, grape, price, locationPurchased, rating, notes, year, image, winery. 
+
 ## Technologies Used
-mySQL, mySQL, Workbench, GitHub, Java, SpringBoot, JPA, Postman, Rest, Spring JPA Data, Slack, Atom, bash 
+mySQL, mySQL, Workbench, GitHub, Java, SpringBoot, JPA, Postman, Rest, Spring JPA Data, Slack, Atom, bash
 
 ## Lessons Learned
 Attention to detail is critical and 90% of the work.
