@@ -4,6 +4,13 @@ plugins {
 	id 'java'
 }
 
+apply plugin: 'war'
+war {
+  enabled = true
+  archiveName = "${baseName}.war"     // Our app name, as defined in settings.gradle
+  destinationDir = file("../")      // project root directory
+}
+
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -27,6 +34,7 @@ dependencies {
 	//compile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.1'
 	//compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '8.5.23'
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.7'
+	implementation ('org.springframework.boot:spring-boot-starter-tomcat')
 }
 
 

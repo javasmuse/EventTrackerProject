@@ -42,9 +42,24 @@ public class YWowController {
 	}
 
 	@GetMapping("wine/{wid}")
-	public Wine getById(@PathVariable("wid") int id) {
-		return svc.findById(id);
+	public Wine getById(@PathVariable("wid") Integer id, HttpServletResponse resp) {
+		Wine wine = null;
+		
+		try {
+			wine = svc.findById(id);
+			if (wine != null) {
+				resp.setStatus(200);;
+			} else {
+				resp.setStatus(404); 
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			resp.setStatus(400);
+		}
+		return wine;
 	}
+	
+	
 
 	@DeleteMapping("wine/{wid}")
 	public void destroyWine(@PathVariable("wid") int id, HttpServletResponse resp) {
