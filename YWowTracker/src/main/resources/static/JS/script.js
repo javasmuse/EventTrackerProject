@@ -1,17 +1,17 @@
 window.addEventListener('load', function(e) {
 	console.log('document loaded');
-	cAll();
+	init();
 });
 
 
 
 function init() {
 
-//	document.listAllWines.listAllWines.addEventListener('click',
-//			function(event) {
-//				event.preventDefault();
-//				cAll();
-//			});
+	document.listAllWines.listAllWines.addEventListener('click',
+			function(event) {
+				event.preventDefault();
+				cAll();
+			});
 
 	document.wineById.wineById.addEventListener('click', function(event) {
 		event.preventDefault();
@@ -146,6 +146,8 @@ function deleteUpdate(wid) {
 }
 
 
+
+
 function displayWineAll(wines) { // output all
 
 	let body = document.getElementById('seeAll');
@@ -204,39 +206,24 @@ function displayWineAll(wines) { // output all
 		td11.textContent = wines[i].winery;
 		tr.appendChild(td11);
 
-		// button for see one 
 		
 		let td12 = document.createElement('td');
-		let btn = document.createElement('input');
-		btn.name = 'wineId';
-		btn.type = 'hidden';
-		btn.value = 'wines[i].id';
-		tr.appendChild(td12); 
 		
 		let submit = document.createElement('input');
 		submit.name = 'submit'; 
 		submit.type = 'submit'; 
 		submit.value = 'View Wine'; 
-		
-		form.appendChild(btn);
 		form.appendChild(submit);
-//		btn.setAttribute('type', 'button');
-//		btn.setAttribute('value', 'View Wine');
-//		btn.setAttribute('name', 'edit');
+		
+		td12.appendChild(submit);
 		tr.appendChild(td12);
 		
 		submit.addEventListener('click', function(e) {
 			e.preventDefault();
-			displayWine();
+			displayWine(wines[i]);
 			var form = e.target.parentElement;
-			form.reset();
 		});
-		form.appendChild(submit);
 		
-//		<input type="submit" value="Delete" />				
-//			<input type="hidden" name="cid" value="${chess.id }"/>
-	
-//		
 		table.appendChild(tr);
 		document.body.appendChild(form);
 
@@ -244,12 +231,11 @@ function displayWineAll(wines) { // output all
 }
 
 function displayWine(wine) { // output the wine with fields by // IDEA:
-	
 	let wid = wine.id; 
 
 	let body = document.getElementById('outputById');
 	outputById.textContent = '';
-
+	
 	let table = document.createElement('table');
 	body.appendChild(table);
 
