@@ -111,13 +111,51 @@ function deleteWine(wid) {
 	xhr.send(null);
 }
 
+
+function editWine(wine) {
+	
+	let form = event.target.parentElement; 
+	console.log('in the editing');
+	
+		let wineC = {
+			name : form.name.value,
+			country : form.country.value,
+			region : form.region.value,
+			grape : form.grape.value,
+			price : form.price.value,
+			locationPurchased : form.locationPurchased.value,
+			rating : form.rating.value,
+			notes : form.notes.value,
+			year : form.year.value,
+			image : form.image.value,
+			winery : form.winery.value,
+		}
+
+		let xhr = new XMLHttpRequest();
+		xhr.open('PUT', '/api/wine/' + wine.id);
+		xhr.setRequestHeader('Content-type', 'application/json');
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState === 4 && xhr.status < 400) {
+				
+				let wineC = JSON.parse(xhr.responseText);
+				console.log('here i am');
+				cAll();
+			} else {
+				let div = document.getElementById('updateW')
+				div.textContent = 'unable process';
+			}
+		};
+		xhr.send(JSON.stringify(wineC));
+	} 
+
 function updateWine(wine) {
 	
 	let body = document.getElementById('updateById');
-	updateById.textContent = '';
+	body.textContent = '';
 
-	var formUW = document.createElement('form');
-	formUW.name = 'Update Wine';
+	var form = document.createElement('form');
+	form.name = 'Update Wine';
+	console.log('in the update');
 
 	// create an input field
 	var nameW = document.createElement('input');
@@ -196,6 +234,7 @@ function updateWine(wine) {
 	submit.addEventListener('click', function(e) { 
 		e.preventDefault();
 		var form = e.target.parentElement;
+		editWine(wine); 
 
 		// print the  value to the console
 		console.log(form.nameW.value);
@@ -206,7 +245,8 @@ function updateWine(wine) {
 
 
 	form.appendChild(submit);
-	document.body.appendChild(form);
+	
+	body.appendChild(form);
 }
 
 function deleteUpdate(wid, wine) {
@@ -228,29 +268,31 @@ function deleteUpdate(wid, wine) {
 	form.appendChild(submit);
 	document.body.appendChild(form);
 
-	var form2 = document.createElement('form');
-	form2.name = 'Update this Wine?';
+	var form = document.createElement('form');
+	form.name = 'Update this Wine?';
 
-	var submit2 = document.createElement('input');
-	submit2.name = 'submit';
-	submit2.type = 'submit';
-	submit2.value = 'UPDATE Wine';
+	var submit = document.createElement('input');
+	submit.name = 'submit';
+	submit.type = 'submit';
+	submit.value = 'UPDATE Wine';
 
 	submit.addEventListener('click', function(e) {
 		e.preventDefault();
+		console.log('clicked to update');
 		updateWine(wine);
-		form2.reset();
+		form.reset();
 	});
 
-	form2.appendChild(submit2);
-	document.body.appendChild(form2);
-
+	form.appendChild(submit);
+	document.body.appendChild(form);
 }
+
 
 function displayWineAll(wines) { // output all
 
 	let body = document.getElementById('showAll');
-	outputById.textContent = '';
+	body.textContent = '';
+//	document.body.innerHTML = '';
 
 	let form = document.createElement('form');
 	form.name = 'Inventory';
@@ -332,7 +374,7 @@ function displayWine(wine) { // output the wine with fields by // IDEA:
 	let wid = wine.id;
 
 	let body = document.getElementById('outputById');
-	outputById.textContent = '';
+	body.textContent = '';
 
 	let table = document.createElement('table');
 	body.appendChild(table);
