@@ -5,16 +5,20 @@ Basic table to record a person's wine encounters.
 I have often used a currently existing app for this, but it's interface is not consistent and more importantly it isn't useful when not connected to the internet. I can see a use a for a locally based yet cloud and web accessible log of a person's wine encounters. I like to know which wines are to be passed and which are preferred.
 
 ## How to Use
-There isn't a front end yet. Current functions available through Postman are:
+Updated for javascript addition
+user can see all wines, view an individual wine, add a new wine, and update a wine through the front end.
+
+Previous
+front end yet. Current functions available through Postman are:
 looking up a wine by ID
 viewing the entire collection
 updating a wine by ID
 adding a wine to the collection
 
-The fields for this single wine table are: an auto generated id, name, country, region, grape, price, locationPurchased, rating, notes, year, image, winery. 
+The fields for this single wine table are: an auto generated id, name, country, region, grape, price, locationPurchased, rating, notes, year, image, winery.
 
 ## Technologies Used
-mySQL, mySQL, Workbench, GitHub, Java, SpringBoot, JPA, Postman, Rest, Spring JPA Data, Slack, Atom, bash
+javascript, mySQL, mySQL, Workbench, GitHub, Java, SpringBoot, JPA, Postman, Rest, Spring JPA Data, Slack, Atom, bash
 
 ## Lessons Learned
 Attention to detail is critical and 90% of the work.
