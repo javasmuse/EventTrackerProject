@@ -71,6 +71,7 @@ export class NgYWowTrackerComponent implements OnInit {
   }
 
   updateWine() {
+    console.log('are we printing here?')
     this.wineService.update(this.editWine).subscribe(
       data => {
         this.reload();
@@ -82,7 +83,8 @@ export class NgYWowTrackerComponent implements OnInit {
   }
 
   setEditWine() {
-    this.editWine = Object.assign({}, this.selected);
+    console.log('set Edit wine');
+    this.editWine = Object.assign({}, this.selected  );
   }
 
   displayTable() {

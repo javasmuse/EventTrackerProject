@@ -64,26 +64,25 @@ public class YWowController {
 	
 
 	@DeleteMapping("wine/{wid}")
-	public void destroyWine(@PathVariable("wid") int id, HttpServletResponse resp) {
+	public void destroyWine(@PathVariable("wid") int id, HttpServletResponse resp, HttpServletRequest req) {
 		svc.deleteById(id);
 		
 	}
 
 	@PutMapping("wine/{wid}")
-	public Wine replaceWine(@PathVariable("wid") int wid, @RequestBody Wine wine, HttpServletResponse resp,
-			HttpServletResponse req) {
+	public Wine replaceWine(HttpServletRequest req, HttpServletResponse res, @PathVariable("wid") int wid, @RequestBody Wine wine) {
 		try {
 			wine = svc.updateById(wid, wine);
-			if (wine != null) {
-				resp.setStatus(404);
+			if (wine == null) {
+				res.setStatus(404);
 			} else {
-				resp.setStatus(201);
+				res.setStatus(201);
 			}
 		} catch (Exception e) {
-			resp.setStatus(400);
+			res.setStatus(400);
 			e.printStackTrace();
 		}
 		return wine;
 	}
-
 }
+

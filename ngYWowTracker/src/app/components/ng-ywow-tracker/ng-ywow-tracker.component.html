@@ -1,5 +1,5 @@
+<button (click)="displayTable()">Main Menu</button>
 <h1 align="center"> {{ title }}</h1>
-<button (click)="displayTable()">Main</button>
 <h2 align="center"> Wine Count: {{wines.length}} </h2>
 
  <div id="listAllWines" *ngIf="!selected">
@@ -14,13 +14,11 @@
         <th>Delete</th>
       </tr>
       <tr class="table-info" *ngFor="let wine of wines">
-        <td (click)="displayWine(wine)"> {{ wine.name }}</td>
+        <td (click)="displayWine(wine)" > {{ wine.name }}</td>
         <td>{{ wine.country }}</td>
         <td>{{ wine.region }}</td>
         <td>{{ wine.grape }}</td>
         <td>{{ wine.price }}</td>
-        <td>
-        </td>
         <td>
           <input type="submit" value="delete" (click)="deleteWine(wine.id)" />
         </td>
@@ -43,20 +41,22 @@
 <div id="displayWineDetails" *ngIf="selected">
   <table class="table table-striped">
     <thead class="thead thead-light">
-      <tr align="left">
+      <tr align="center">
         <th>Name:</th>
         <th>Country:</th>
         <th>Region:</th>
         <th>Grape:</th>
         <th>Price:</th>
       </tr>
-      <tr>
+      <tr align="center">
         <td>{{ selected.name }}</td>
         <td>{{ selected.country }}</td>
         <td>{{ selected.region }}</td>
         <td>{{ selected.grape }}</td>
         <td>{{ selected.price }}</td>
-        <button (click)="setEditWine()">Edit</button>
+      </tr>
+      <tr align="right">
+          <button (click)="setEditWine()">Edit</button>
       </tr>
       <!-- <tr> -->
         <!-- <th align="right">
@@ -70,36 +70,18 @@
   </table>
 </div>
 
-<div id="editWine" *ngIf="setEditWine && selected" >
+<div id="editWine" *ngIf="editWine && selected">
+
   <form>
-      <br><br>
-    <input type="text"
-    name="editName"
-    [(ngModel)]="editWine.name"
-    placeholder="selected.name"
-    />
-    <input type="text"
-    name="editCountry"
-    [(ngModel)]="editWine.country"
-    placeholder="selected.country"
-    />
-    <input type="text"
-    name="editRegion"
-    [(ngModel)]="editWine.region"
-    placeholder="selected.region"
-    />
-    <input type="text"
-    name="editGrape"
-    [(ngModel)]="editWine.grape"
-    placeholder="selected.grape"
-    />
-    <input type="text"
-    name="editPrice"
-    [(ngModel)]="editWine.price"
-    placeholder="selected.price"
-    />
+    <input type="text" name="editName" [(ngModel)]="editWine.name" placeholder="selected.name" />
+    <input type="text" name="editCountry" [(ngModel)]="editWine.country" placeholder="selected.country" />
+    <input type="text" name="editRegion" [(ngModel)]="editWine.region" placeholder="selected.region" />
+    <input type="text" name="editGrape" [(ngModel)]="editWine.grape" placeholder="selected.grape" />
+    <input type="text" name="editPrice" [(ngModel)]="editWine.price" placeholder="selected.price" />
     <!-- <button (click)="displayTable() = null">Cancel</button> -->
-    <button (click)="updateWine()">Save Edits</button>
+    <br>
+    <button (click)="editWine = null">Cancel</button>
+    <button (click)='updateWine()'>Save Edits</button>
 
   </form>
 </div>

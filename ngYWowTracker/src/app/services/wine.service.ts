@@ -1,3 +1,4 @@
+import { logging } from 'protractor';
 import { Wine } from './../models/wine';
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
@@ -61,10 +62,10 @@ export class WineService {
     update(wine: Wine) {
       const httpOptions = {
           headers: new HttpHeaders({
-            'Content=Type' : 'application/json'
+            'Content-Type' : 'application/json'
           })
         };
-      return this.http.put(this.baseUrl, Wine, httpOptions)
+      return this.http.put(this.baseUrl + '/' + wine.id, wine, httpOptions)
       .pipe(
         catchError((err: any) => {
           console.log(err);
