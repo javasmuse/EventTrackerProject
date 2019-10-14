@@ -1,0 +1,11 @@
+﻿id,name,country,region,grape,price,locationPurchased,rating,notes,year,image,winery
+1,Anima de Raimat Blanco,Spain,Costers del Segre,Xarel-lo,16.52,Wine Shop,3.9,citrussy zing to the finish,2018,/assets/photos/Anima.jpg,Raimat
+2,El Mago,Spain,Terra Alta,Garnacha,15.04,Wine Shop,3.4,easy drinking,2017,/assets/photos/ElMago.jpg,Franck Massard
+3,Ramon Bilbao,Spain,Rioja,Tempranillo,14.99,Sitges,3.8,very tasty,2015,/assets/photos/RamonBilbao.jpg,Ramon Bilbao
+4,Tour de Pierres,France,Languedoc-Roussillon,Shiraz,19.99,,3.7,"Earthy, blackberry, leather",2016,/assets/photos/Tour.jpg,Ermitage du Pic Saint Loup
+5,Educated Guess,USA,Napa,Cabernet Sauvignon,23.99,,4.1,Dry Bold,2016,/assets/photos/EducatedGuess.jpg,Roots Run Deep
+6,Two Angels,USA,North Coast,Petite Syrah,24.49,Wine Warehouse,3.5,cool label,2015,/assets/photos/TwoAngles.jpg,Two Angles
+7,Big Smooth,USA,Lodi,Old Vine Zinfandel,16.99,Wine Warehouse,3.9,"Dark berries, tobacco, pepper",2015,/assets/photos/BigSmooth.jpg,Big Smooth
+8,Dialogo Tinto,Portugal,Douro,Touriga Nacional,7.41,Wine Shop,3.7,Good with Pizza,2017,assets/photos/Dialogo.jpg,Niepoort
+9,Cata de Morante Verdejo,Spain,Rueda,Verdejo,19.99,Restaurant,3.9,Lively Refreshing,2012,/assets/Photos/Cata.jpg,Finca Los Aljibes
+10,,,,,,,,,,,

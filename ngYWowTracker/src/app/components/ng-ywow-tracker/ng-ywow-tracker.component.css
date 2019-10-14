@@ -1,0 +1,10 @@
+header {
+  background-image: url('/assets/photos/wineGlass.jpg');
+  height: 20%;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: cursive;
+	font-size: 22px;
+	text-shadow: 2px 2px #000000;
+	color: white;
+}

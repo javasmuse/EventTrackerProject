@@ -1,9 +1,12 @@
+<header>
 <button (click)="displayTable()">Main Menu</button>
-<h1 align="center"> {{ title }}</h1>
-<h2 align="center"> Wine Count: {{wines.length}} </h2>
-
+<h2 align="center"> {{ title }}</h2>
+<h3 align="center"> Wine Count: {{wines.length}} </h3>
+<br><br>
+</header>
+<body>
  <div id="listAllWines" *ngIf="!selected">
-  <table class="table table-bordered table-striped table-primary">
+  <table class="table table-light table-hover table-sm">
     <thead class="thead">
       <tr align="center">
         <th>Name</th>
@@ -13,12 +16,12 @@
         <th>Price</th>
         <th>Delete</th>
       </tr>
-      <tr class="table-info" *ngFor="let wine of wines">
+      <tr align="center" class="table-danger" *ngFor="let wine of wines">
         <td (click)="displayWine(wine)" > {{ wine.name }}</td>
         <td>{{ wine.country }}</td>
         <td>{{ wine.region }}</td>
         <td>{{ wine.grape }}</td>
-        <td>{{ wine.price }}</td>
+        <td>${{ wine.price }}</td>
         <td>
           <input type="submit" value="delete" (click)="deleteWine(wine.id)" />
         </td>
@@ -47,14 +50,17 @@
         <th>Region:</th>
         <th>Grape:</th>
         <th>Price:</th>
+        <th>Image:</th>
       </tr>
       <tr align="center">
         <td>{{ selected.name }}</td>
         <td>{{ selected.country }}</td>
         <td>{{ selected.region }}</td>
         <td>{{ selected.grape }}</td>
-        <td>{{ selected.price }}</td>
-      </tr>
+        <td>${{ selected.price }}</td>
+        <td><img src='{{ selected.image }}' style="width:250px"></td></tr>
+      <!-- <br> -->
+      <!-- <tr><td><img src='/assets/photos/PitcherWhite.jpg' style="width:350px"></td> -->
       <tr align="right">
           <button (click)="setEditWine()">Edit</button>
       </tr>
@@ -85,3 +91,5 @@
 
   </form>
 </div>
+
+</body>
