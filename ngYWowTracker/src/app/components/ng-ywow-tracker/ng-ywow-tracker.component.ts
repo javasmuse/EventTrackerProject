@@ -98,4 +98,5 @@ export class NgYWowTrackerComponent implements OnInit {
   getWineCount(): number {
     return this.wines.length;
   }
+
 }
